@@ -28,83 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.textboxName = new System.Windows.Forms.TextBox();
+            this.textboxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.groupBoxRadioBtn = new System.Windows.Forms.GroupBox();
+            this.radioBtnNonLinear = new System.Windows.Forms.RadioButton();
+            this.radioBtnLinear = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.textboxDefinition = new System.Windows.Forms.TextBox();
+            this.listViewBox = new System.Windows.Forms.ListView();
+            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxRadioBtn.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(17, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(17, 13);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 30);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Location = new System.Drawing.Point(182, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "EDIT";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(182, 13);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 30);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(103, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(103, 13);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSearch
             // 
-            this.button4.Location = new System.Drawing.Point(468, 13);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 22);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(516, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 30);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textboxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 4;
+            this.textboxName.Location = new System.Drawing.Point(17, 50);
+            this.textboxName.Name = "textboxName";
+            this.textboxName.Size = new System.Drawing.Size(192, 22);
+            this.textboxName.TabIndex = 4;
             // 
-            // textBox3
+            // textboxSearch
             // 
-            this.textBox3.Location = new System.Drawing.Point(300, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 22);
-            this.textBox3.TabIndex = 6;
+            this.textboxSearch.Location = new System.Drawing.Point(300, 19);
+            this.textboxSearch.Name = "textboxSearch";
+            this.textboxSearch.Size = new System.Drawing.Size(210, 22);
+            this.textboxSearch.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(214, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Name";
             // 
@@ -113,101 +116,123 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(213, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Category";
             // 
-            // comboBox1
+            // comboBoxCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 24);
-            this.comboBox1.TabIndex = 9;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Items.AddRange(new object[] {
+            "Abstract",
+            "Array",
+            "Graphs",
+            "Hash",
+            "List",
+            "Tree"});
+            this.comboBoxCategory.Location = new System.Drawing.Point(17, 80);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(192, 24);
+            this.comboBoxCategory.Sorted = true;
+            this.comboBoxCategory.TabIndex = 9;
             // 
-            // groupBox1
+            // groupBoxRadioBtn
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(17, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 69);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Structure";
+            this.groupBoxRadioBtn.Controls.Add(this.radioBtnNonLinear);
+            this.groupBoxRadioBtn.Controls.Add(this.radioBtnLinear);
+            this.groupBoxRadioBtn.Location = new System.Drawing.Point(17, 110);
+            this.groupBoxRadioBtn.Name = "groupBoxRadioBtn";
+            this.groupBoxRadioBtn.Size = new System.Drawing.Size(258, 69);
+            this.groupBoxRadioBtn.TabIndex = 10;
+            this.groupBoxRadioBtn.TabStop = false;
+            this.groupBoxRadioBtn.Text = "Structure";
             // 
-            // radioButton1
+            // radioBtnNonLinear
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 31);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Linear";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioBtnNonLinear.AutoSize = true;
+            this.radioBtnNonLinear.Location = new System.Drawing.Point(147, 31);
+            this.radioBtnNonLinear.Name = "radioBtnNonLinear";
+            this.radioBtnNonLinear.Size = new System.Drawing.Size(100, 21);
+            this.radioBtnNonLinear.TabIndex = 1;
+            this.radioBtnNonLinear.TabStop = true;
+            this.radioBtnNonLinear.Text = "Non-Linear";
+            this.radioBtnNonLinear.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioBtnLinear
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(147, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(94, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Non-Linear";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBtnLinear.AutoSize = true;
+            this.radioBtnLinear.Location = new System.Drawing.Point(6, 31);
+            this.radioBtnLinear.Name = "radioBtnLinear";
+            this.radioBtnLinear.Size = new System.Drawing.Size(69, 21);
+            this.radioBtnLinear.TabIndex = 0;
+            this.radioBtnLinear.TabStop = true;
+            this.radioBtnLinear.Text = "Linear";
+            this.radioBtnLinear.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.Size = new System.Drawing.Size(67, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Definition";
             // 
-            // textBox2
+            // textboxDefinition
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 201);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 160);
-            this.textBox2.TabIndex = 12;
+            this.textboxDefinition.Location = new System.Drawing.Point(17, 201);
+            this.textboxDefinition.Multiline = true;
+            this.textboxDefinition.Name = "textboxDefinition";
+            this.textboxDefinition.Size = new System.Drawing.Size(258, 160);
+            this.textboxDefinition.TabIndex = 12;
             // 
-            // listView1
+            // listViewBox
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(300, 41);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(243, 350);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnName,
+            this.columnCategory});
+            this.listViewBox.HideSelection = false;
+            this.listViewBox.Location = new System.Drawing.Point(300, 55);
+            this.listViewBox.Name = "listViewBox";
+            this.listViewBox.Size = new System.Drawing.Size(313, 350);
+            this.listViewBox.TabIndex = 13;
+            this.listViewBox.UseCompatibleStateImageBehavior = false;
+            this.listViewBox.View = System.Windows.Forms.View.Details;
             // 
-            // button5
+            // columnName
             // 
-            this.button5.Location = new System.Drawing.Point(17, 368);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 24);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Open";
-            this.button5.UseVisualStyleBackColor = true;
+            this.columnName.Text = "Name";
+            this.columnName.Width = 137;
             // 
-            // button6
+            // columnCategory
             // 
-            this.button6.Location = new System.Drawing.Point(154, 368);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(121, 23);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Save";
-            this.button6.UseVisualStyleBackColor = true;
+            this.columnCategory.Text = "Category";
+            this.columnCategory.Width = 165;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(17, 368);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(121, 35);
+            this.btnOpen.TabIndex = 14;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(154, 368);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(121, 35);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(556, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(625, 22);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -215,27 +240,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 450);
+            this.ClientSize = new System.Drawing.Size(625, 450);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.listViewBox);
+            this.Controls.Add(this.textboxDefinition);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.groupBoxRadioBtn);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textboxSearch);
+            this.Controls.Add(this.textboxName);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Name = "WikiApplication";
             this.Text = "Wiki Application";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxRadioBtn.ResumeLayout(false);
+            this.groupBoxRadioBtn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,24 +268,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox textboxName;
+        private System.Windows.Forms.TextBox textboxSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.GroupBox groupBoxRadioBtn;
+        private System.Windows.Forms.RadioButton radioBtnNonLinear;
+        private System.Windows.Forms.RadioButton radioBtnLinear;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textboxDefinition;
+        private System.Windows.Forms.ListView listViewBox;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ColumnHeader columnName;
+        private System.Windows.Forms.ColumnHeader columnCategory;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wiki_Application_For_Junior_Programmers
 {
-  //  6.1 Create a separate class file to hold the four data items of the Data Structure
+   // 6.1 Create a separate class file to hold the four data items of the Data Structure
     class Information
     {
         // Auto-implemented properties.
@@ -43,7 +43,7 @@ namespace Wiki_Application_For_Junior_Programmers
         {
             structure = newStructure;
         }
-        public string getDefinition()
+        public string getStructure()
         {
             return structure;
         }
@@ -51,10 +51,15 @@ namespace Wiki_Application_For_Junior_Programmers
         {
             definition = newDefinition;
         }
-        public string getPosition()
+        public string getDefinition()
         {
             return definition;
         }
+        public string DisplayDataStructures()
+        {
+            return getName() + " " + getCategory() + " " + getStructure() + " " + getDefinition();
+        }
+       
     }
 
 }

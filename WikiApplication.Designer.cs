@@ -123,13 +123,6 @@
             // comboBoxCategory
             // 
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Items.AddRange(new object[] {
-            "Abstract",
-            "Array",
-            "Graphs",
-            "Hash",
-            "List",
-            "Tree"});
             this.comboBoxCategory.Location = new System.Drawing.Point(17, 80);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(192, 24);
@@ -191,6 +184,8 @@
             this.listViewBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnName,
             this.columnCategory});
+            this.listViewBox.FullRowSelect = true;
+            this.listViewBox.GridLines = true;
             this.listViewBox.HideSelection = false;
             this.listViewBox.Location = new System.Drawing.Point(300, 55);
             this.listViewBox.Name = "listViewBox";
@@ -198,6 +193,7 @@
             this.listViewBox.TabIndex = 13;
             this.listViewBox.UseCompatibleStateImageBehavior = false;
             this.listViewBox.View = System.Windows.Forms.View.Details;
+            this.listViewBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewBox_MouseClick);
             // 
             // columnName
             // 
@@ -259,6 +255,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "WikiApplication";
             this.Text = "Wiki Application";
+            this.Load += new System.EventHandler(this.WikiApplication_Load);
             this.groupBoxRadioBtn.ResumeLayout(false);
             this.groupBoxRadioBtn.PerformLayout();
             this.ResumeLayout(false);

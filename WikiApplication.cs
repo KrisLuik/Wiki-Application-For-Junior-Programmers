@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,39 +34,23 @@ namespace Wiki_Application_For_Junior_Programmers
         #region ADD Button
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // ClearStatusMessage();
-            if (!string.IsNullOrWhiteSpace(textboxName.Text) &&
-                !string.IsNullOrWhiteSpace(comboBoxCategory.Text) &&
-                !radioBtnLinear.Checked &&
-                !string.IsNullOrWhiteSpace(textboxDefinition.Text))
-            {
-                Information newInfo = new Information();
-                newInfo.setName(textboxName.Text);
-                newInfo.setCategory(comboBoxCategory.Text);
-                newInfo.setStructure(radioBtnNonLinear.Text);
-                newInfo.setDefinition(textboxDefinition.Text);
-                Wiki.Add(newInfo);
-                //clearTextbox();
-                //displayInformation();
-            }
-            else if (!string.IsNullOrWhiteSpace(textboxName.Text) &&
-                     !string.IsNullOrWhiteSpace(comboBoxCategory.Text) &&
-                     !radioBtnNonLinear.Checked &&
-                     !string.IsNullOrWhiteSpace(textboxDefinition.Text))
-            {
-                Information newInfo = new Information();
-                newInfo.setName(textboxName.Text);
-                newInfo.setCategory(comboBoxCategory.Text);
-                newInfo.setStructure(radioBtnLinear.Text);
-                newInfo.setDefinition(textboxDefinition.Text);
-                Wiki.Add(newInfo);
-            }
-            else
-            {
-                MessageBox.Show("Error! Select Linear or Non-Linear structure.");
-            }
+            Information newInfo = new Information();
+            newInfo.setName(textboxName.Text);
+            newInfo.setCategory(comboBoxCategory.Text);
+            newInfo.setStructure(CheckRadioButton());
+            newInfo.setDefinition(textboxDefinition.Text);
+            Wiki.Add(newInfo);
+            Display();
         }
         #endregion
+        private void Display()
+        {
+            listViewItems.Sort();
+            foreach (var information in Wiki)
+            {
+                listViewItems.Items.Add(information.DisplayDataStructures());
+            }
+        }
         #region ClearTextboxes Method
         private void ClearAllTextBoxes()
         {
@@ -77,6 +62,12 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Populate Combobox Method
         private void FillCategoryComboBox()
         {
+            //string[] dataString = File.ReadAllLines(@"categories.txt");
+            //for (int x = 0; x <dataString.Length;x++)
+            //{
+            //    comboBoxCategory.Items.Add(dataString[x]);
+
+            //}
             for (int i = 0; i < categoryArray.Length; i++)
             {
                 categoryArray[i].ToString();
@@ -87,20 +78,66 @@ namespace Wiki_Application_For_Junior_Programmers
         #region ListviewBox
         private void listViewBox_MouseClick(object sender, MouseEventArgs e)
         {
-            foreach (Information info in Wiki)
-            {
-                //ListViewItem item = new ListViewItem();
-                //item.Text = info.Name;
-                //item.SubItems.Add(info.Position);
-                //item.SubItems.Add(info.Team);
-                //lstvPerson.Items.Add(item);
-            }
+            int currentItem = listViewItems.SelectedIndices[0];
+            textboxName.Text = Wiki[currentItem].ToString();
+
+
         }
         #endregion
         #region Form Load
         private void WikiApplication_Load(object sender, EventArgs e)
         {
             FillCategoryComboBox();
+        }
+        #endregion
+        // 6.6 Create two methods to highlight and return the values from the Radio button GroupBox.
+        // The first method must return a string value from the selected radio button(Linear or Non-Linear).
+        // The second method must send an integer index which will highlight an appropriate radio button.
+        #region Radio button
+        private string CheckRadioButton()
+        {
+            string value = "";
+            if (radioBtnLinear.Checked)
+            {
+                value = radioBtnLinear.Text;
+                return "Linear";
+            }
+            else
+            {
+                radioBtnNonLinear.Checked = true;
+                value = radioBtnNonLinear.Text;
+                return "Non-Linear";
+            }
+        }
+        private void HighlightRadioButton(int button)
+        {
+            if (button == 0)
+            {
+                radioBtnLinear.Checked = true;
+                
+            }
+            else
+            {
+                radioBtnNonLinear.Checked = true;
+            }
+        }
+        #endregion
+
+        //6.5 Create a custom ValidName method which will take a parameter string value from the Textbox Name
+        //and returns a Boolean after checking for duplicates.Use the built in List<T> method “Exists” to answer this requirement.
+        #region Check duplicates
+        private bool ValidName(string a)
+        {
+            // Trace.Listeners.Add(myTraceListener);
+            if (Wiki.Exists(dup => dup.getName() == a ))
+            {
+                // Trace.WriteLine("Valid Name == false");
+                return false;
+            }else
+            {
+                // Trace.WriteLine("Valid Name == true");
+                return true;
+            }
         }
         #endregion
     }

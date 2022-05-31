@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Wiki_Application_For_Junior_Programmers
 {
@@ -55,9 +56,11 @@ namespace Wiki_Application_For_Junior_Programmers
         {
             return definition;
         }
-        public string DisplayDataStructures()
+        public ListViewItem DisplayDataStructures()
         {
-            return getName() + " " + getCategory() + " " + getStructure() + " " + getDefinition();
+            ListViewItem lvi = new ListViewItem(getName());
+            lvi.SubItems.Add(getCategory());
+            return lvi;
         }
        
     }

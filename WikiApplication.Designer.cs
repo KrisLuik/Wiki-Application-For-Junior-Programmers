@@ -53,10 +53,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(13, 11);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(17, 14);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(60, 24);
+            this.btnAdd.Size = new System.Drawing.Size(80, 30);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -64,77 +64,76 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(136, 11);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Location = new System.Drawing.Point(181, 14);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(56, 24);
+            this.btnEdit.Size = new System.Drawing.Size(75, 30);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(77, 11);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Location = new System.Drawing.Point(103, 14);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(56, 24);
+            this.btnDelete.Size = new System.Drawing.Size(75, 30);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(387, 15);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(516, 18);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(73, 24);
+            this.btnSearch.Size = new System.Drawing.Size(97, 30);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // textboxName
             // 
-            this.textboxName.Location = new System.Drawing.Point(13, 41);
-            this.textboxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxName.Location = new System.Drawing.Point(17, 50);
+            this.textboxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxName.Name = "textboxName";
-            this.textboxName.Size = new System.Drawing.Size(145, 20);
+            this.textboxName.Size = new System.Drawing.Size(192, 22);
             this.textboxName.TabIndex = 4;
             // 
             // textboxSearch
             // 
-            this.textboxSearch.Location = new System.Drawing.Point(225, 15);
-            this.textboxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxSearch.Location = new System.Drawing.Point(300, 18);
+            this.textboxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxSearch.Name = "textboxSearch";
-            this.textboxSearch.Size = new System.Drawing.Size(158, 20);
+            this.textboxSearch.Size = new System.Drawing.Size(209, 22);
             this.textboxSearch.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(213, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(213, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Category";
             // 
             // comboBoxCategory
             // 
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(13, 65);
-            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCategory.Location = new System.Drawing.Point(17, 80);
+            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxCategory.Size = new System.Drawing.Size(192, 24);
             this.comboBoxCategory.Sorted = true;
             this.comboBoxCategory.TabIndex = 9;
             // 
@@ -142,11 +141,11 @@
             // 
             this.groupBoxRadioBtn.Controls.Add(this.radioBtnNonLinear);
             this.groupBoxRadioBtn.Controls.Add(this.radioBtnLinear);
-            this.groupBoxRadioBtn.Location = new System.Drawing.Point(13, 89);
-            this.groupBoxRadioBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxRadioBtn.Location = new System.Drawing.Point(17, 110);
+            this.groupBoxRadioBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxRadioBtn.Name = "groupBoxRadioBtn";
-            this.groupBoxRadioBtn.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxRadioBtn.Size = new System.Drawing.Size(194, 56);
+            this.groupBoxRadioBtn.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxRadioBtn.Size = new System.Drawing.Size(259, 69);
             this.groupBoxRadioBtn.TabIndex = 10;
             this.groupBoxRadioBtn.TabStop = false;
             this.groupBoxRadioBtn.Text = "Structure";
@@ -154,10 +153,10 @@
             // radioBtnNonLinear
             // 
             this.radioBtnNonLinear.AutoSize = true;
-            this.radioBtnNonLinear.Location = new System.Drawing.Point(110, 25);
-            this.radioBtnNonLinear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnNonLinear.Location = new System.Drawing.Point(147, 31);
+            this.radioBtnNonLinear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioBtnNonLinear.Name = "radioBtnNonLinear";
-            this.radioBtnNonLinear.Size = new System.Drawing.Size(77, 17);
+            this.radioBtnNonLinear.Size = new System.Drawing.Size(100, 21);
             this.radioBtnNonLinear.TabIndex = 1;
             this.radioBtnNonLinear.TabStop = true;
             this.radioBtnNonLinear.Text = "Non-Linear";
@@ -166,10 +165,10 @@
             // radioBtnLinear
             // 
             this.radioBtnLinear.AutoSize = true;
-            this.radioBtnLinear.Location = new System.Drawing.Point(4, 25);
-            this.radioBtnLinear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnLinear.Location = new System.Drawing.Point(5, 31);
+            this.radioBtnLinear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioBtnLinear.Name = "radioBtnLinear";
-            this.radioBtnLinear.Size = new System.Drawing.Size(54, 17);
+            this.radioBtnLinear.Size = new System.Drawing.Size(69, 21);
             this.radioBtnLinear.TabIndex = 0;
             this.radioBtnLinear.TabStop = true;
             this.radioBtnLinear.Text = "Linear";
@@ -178,20 +177,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 148);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(13, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(67, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Definition";
             // 
             // textboxDefinition
             // 
-            this.textboxDefinition.Location = new System.Drawing.Point(13, 163);
-            this.textboxDefinition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxDefinition.Location = new System.Drawing.Point(17, 201);
+            this.textboxDefinition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxDefinition.Multiline = true;
             this.textboxDefinition.Name = "textboxDefinition";
-            this.textboxDefinition.Size = new System.Drawing.Size(194, 131);
+            this.textboxDefinition.Size = new System.Drawing.Size(257, 160);
             this.textboxDefinition.TabIndex = 12;
             // 
             // listViewItems
@@ -202,10 +200,10 @@
             this.listViewItems.FullRowSelect = true;
             this.listViewItems.GridLines = true;
             this.listViewItems.HideSelection = false;
-            this.listViewItems.Location = new System.Drawing.Point(225, 45);
-            this.listViewItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewItems.Location = new System.Drawing.Point(300, 55);
+            this.listViewItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewItems.Name = "listViewItems";
-            this.listViewItems.Size = new System.Drawing.Size(285, 285);
+            this.listViewItems.Size = new System.Drawing.Size(379, 350);
             this.listViewItems.TabIndex = 13;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
             this.listViewItems.View = System.Windows.Forms.View.Details;
@@ -223,20 +221,20 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(13, 299);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpen.Location = new System.Drawing.Point(17, 368);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(91, 28);
+            this.btnOpen.Size = new System.Drawing.Size(121, 34);
             this.btnOpen.TabIndex = 14;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(116, 299);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(155, 368);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 28);
+            this.btnSave.Size = new System.Drawing.Size(121, 34);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -244,18 +242,18 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(521, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(695, 22);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // WikiApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 366);
+            this.ClientSize = new System.Drawing.Size(695, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpen);
@@ -272,7 +270,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WikiApplication";
             this.Text = "Wiki Application";
             this.Load += new System.EventHandler(this.WikiApplication_Load);

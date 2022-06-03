@@ -34,12 +34,16 @@ namespace Wiki_Application_For_Junior_Programmers
         #region ADD Button
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // if (!string.IsNullOrWhiteSpace(textboxName.Text) && (ValidName(textboxName.Text)))
+
             Information newInfo = new Information();
-            newInfo.setName(textboxName.Text);
-            newInfo.setCategory(comboBoxCategory.Text);
-            newInfo.setStructure(CheckRadioButton());
-            newInfo.setDefinition(textboxDefinition.Text);
+            newInfo.SetName(textboxName.Text);
+            newInfo.SetCategory(comboBoxCategory.Text);
+            newInfo.SetStructure(RadioButtonType());
+            newInfo.SetDefinition(textboxDefinition.Text);
             Wiki.Add(newInfo);
+            ptr++;
+            Wiki.Sort();
             Display();
         }
         #endregion
@@ -55,6 +59,7 @@ namespace Wiki_Application_For_Junior_Programmers
         private void ClearAllTextBoxes()
         {
             textboxName.Clear();
+            textboxName.Focus();
             textboxDefinition.Clear();
         }
         #endregion
@@ -94,7 +99,7 @@ namespace Wiki_Application_For_Junior_Programmers
         // The first method must return a string value from the selected radio button(Linear or Non-Linear).
         // The second method must send an integer index which will highlight an appropriate radio button.
         #region Radio button
-        private string CheckRadioButton()
+        private string RadioButtonType()
         {
             string value = "";
             if (radioBtnLinear.Checked)
@@ -114,7 +119,6 @@ namespace Wiki_Application_For_Junior_Programmers
             if (button == 0)
             {
                 radioBtnLinear.Checked = true;
-                
             }
             else
             {
@@ -126,19 +130,43 @@ namespace Wiki_Application_For_Junior_Programmers
         //6.5 Create a custom ValidName method which will take a parameter string value from the Textbox Name
         //and returns a Boolean after checking for duplicates.Use the built in List<T> method “Exists” to answer this requirement.
         #region Check duplicates
-        private bool ValidName(string a)
+        private bool ValidName(string checkThisName)
         {
             // Trace.Listeners.Add(myTraceListener);
-            if (Wiki.Exists(dup => dup.getName() == a ))
+            if (Wiki.Exists(dup => dup.GetName() == checkThisName))
             {
                 // Trace.WriteLine("Valid Name == false");
                 return false;
-            }else
+            }
+            else
             {
                 // Trace.WriteLine("Valid Name == true");
                 return true;
             }
         }
         #endregion
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //ClearStatusMessage();
+            int currentRecord = listViewItems.SelectedIndices[0];
+            if (currentRecord >= 0)
+            {
+                DialogResult delRecord = MessageBox.Show("Do you wish to delete this definition?",
+                 "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (delRecord == DialogResult.Yes)
+                {
+                    Wiki.RemoveAt(currentRecord);
+                    Display();
+                    ClearAllTextBoxes();
+                }
+                else
+                {
+                    MessageBox.Show("Item NOT Deleted", "Delete Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
     }
 }

@@ -24,42 +24,42 @@ namespace Wiki_Application_For_Junior_Programmers
             structure = newStructure;
             definition = newDefinition;
         }
-        public void setName(string newName)
+        public void SetName(string newName)
         {
             name = newName;
         }
-        public string getName()
+        public string GetName()
         {
             return name;
         }
-        public void setCategory(string newCategory)
+        public void SetCategory(string newCategory)
         {
             category = newCategory;
         }
-        public string getCategory()
+        public string GetCategory()
         {
             return category;
         }
-        public void setStructure(string newStructure)
+        public void SetStructure(string newStructure)
         {
             structure = newStructure;
         }
-        public string getStructure()
+        public string GetStructure()
         {
             return structure;
         }
-        public void setDefinition(string newDefinition)
+        public void SetDefinition(string newDefinition)
         {
             definition = newDefinition;
         }
-        public string getDefinition()
+        public string GetDefinition()
         {
             return definition;
         }
         public ListViewItem DisplayDataStructures()
         {
-            ListViewItem lvi = new ListViewItem(getName());
-            lvi.SubItems.Add(getCategory());
+            ListViewItem lvi = new ListViewItem(GetName());
+            lvi.SubItems.Add(GetCategory());
             return lvi;
         }
        

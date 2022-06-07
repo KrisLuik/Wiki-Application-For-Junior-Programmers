@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace Wiki_Application_For_Junior_Programmers
 {
-   // 6.1 Create a separate class file to hold the four data items of the Data Structure
-    class Information
+    // 6.1 Create a separate class file to hold the four data items of the Data Structure.
+    // Use auto-implemented properties for the fields which must be of type “string”. Save the class as “Information.cs”.
+    [Serializable]
+     public class Information : IComparable<Information>
     {
         // Auto-implemented properties.
         private string name;
@@ -17,6 +19,7 @@ namespace Wiki_Application_For_Junior_Programmers
         private string definition;
         public Information() { }
 
+        // overloaded constructor not needed.
         public Information(string newName, string newCategory, string newStructure, string newDefinition)
         {
             name = newName;
@@ -62,7 +65,12 @@ namespace Wiki_Application_For_Junior_Programmers
             lvi.SubItems.Add(GetCategory());
             return lvi;
         }
-       
+        // 6.9 Create a single custom method that will sort and
+        // then display the Name and Category from the wiki information in the list.
+        public int CompareTo(Information nameObject)
+        {
+            return name.CompareTo(nameObject.GetName());
+        }
     }
 
 }

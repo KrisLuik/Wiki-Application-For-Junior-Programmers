@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,51 +48,56 @@
             this.columnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStripMessage = new System.Windows.Forms.StatusStrip();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBoxRadioBtn.SuspendLayout();
+            this.statusStripMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 14);
+            this.btnAdd.Location = new System.Drawing.Point(18, 16);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 30);
+            this.btnAdd.Size = new System.Drawing.Size(80, 28);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(181, 14);
+            this.btnEdit.Location = new System.Drawing.Point(195, 16);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 30);
+            this.btnEdit.Size = new System.Drawing.Size(75, 28);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(103, 14);
+            this.btnDelete.Location = new System.Drawing.Point(109, 16);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 30);
+            this.btnDelete.Size = new System.Drawing.Size(75, 28);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(516, 18);
+            this.btnSearch.Location = new System.Drawing.Point(578, 13);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(97, 30);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // textboxName
             // 
@@ -100,10 +106,11 @@
             this.textboxName.Name = "textboxName";
             this.textboxName.Size = new System.Drawing.Size(192, 22);
             this.textboxName.TabIndex = 4;
+            this.textboxName.DoubleClick += new System.EventHandler(this.TextboxName_DoubleClick);
             // 
             // textboxSearch
             // 
-            this.textboxSearch.Location = new System.Drawing.Point(300, 18);
+            this.textboxSearch.Location = new System.Drawing.Point(362, 16);
             this.textboxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxSearch.Name = "textboxSearch";
             this.textboxSearch.Size = new System.Drawing.Size(209, 22);
@@ -129,6 +136,7 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(17, 80);
             this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -200,14 +208,14 @@
             this.listViewItems.FullRowSelect = true;
             this.listViewItems.GridLines = true;
             this.listViewItems.HideSelection = false;
-            this.listViewItems.Location = new System.Drawing.Point(300, 55);
+            this.listViewItems.Location = new System.Drawing.Point(362, 53);
             this.listViewItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewItems.Name = "listViewItems";
             this.listViewItems.Size = new System.Drawing.Size(379, 350);
             this.listViewItems.TabIndex = 13;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
             this.listViewItems.View = System.Windows.Forms.View.Details;
-            this.listViewItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewBox_MouseClick);
+            this.listViewItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewBox_MouseClick);
             // 
             // columnName
             // 
@@ -228,6 +236,7 @@
             this.btnOpen.TabIndex = 14;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
             // btnSave
             // 
@@ -238,23 +247,31 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // statusStrip1
+            // statusStripMessage
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(695, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripMessage.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStripMessage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStripMessage.Location = new System.Drawing.Point(0, 426);
+            this.statusStripMessage.Name = "statusStripMessage";
+            this.statusStripMessage.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStripMessage.Size = new System.Drawing.Size(753, 24);
+            this.statusStripMessage.TabIndex = 16;
+            this.statusStripMessage.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 18);
             // 
             // WikiApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 450);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(753, 450);
+            this.Controls.Add(this.statusStripMessage);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.listViewItems);
@@ -273,9 +290,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WikiApplication";
             this.Text = "Wiki Application";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WikiApplication_FormClosing);
             this.Load += new System.EventHandler(this.WikiApplication_Load);
             this.groupBoxRadioBtn.ResumeLayout(false);
             this.groupBoxRadioBtn.PerformLayout();
+            this.statusStripMessage.ResumeLayout(false);
+            this.statusStripMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,9 +320,11 @@
         private System.Windows.Forms.ListView listViewItems;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripMessage;
         private System.Windows.Forms.ColumnHeader columnName;
         private System.Windows.Forms.ColumnHeader columnCategory;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }
 

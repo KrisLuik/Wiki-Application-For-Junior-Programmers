@@ -19,7 +19,6 @@ namespace Wiki_Application_For_Junior_Programmers
         private string definition;
         public Information() { }
 
-        // overloaded constructor not needed.
         public Information(string newName, string newCategory, string newStructure, string newDefinition)
         {
             name = newName;

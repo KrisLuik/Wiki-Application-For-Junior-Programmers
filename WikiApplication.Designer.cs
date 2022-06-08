@@ -206,7 +206,6 @@
             this.columnName,
             this.columnCategory});
             this.listViewItems.FullRowSelect = true;
-            this.listViewItems.GridLines = true;
             this.listViewItems.HideSelection = false;
             this.listViewItems.Location = new System.Drawing.Point(362, 53);
             this.listViewItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -247,17 +246,17 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // statusStripMessage
             // 
             this.statusStripMessage.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStripMessage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStripMessage.Location = new System.Drawing.Point(0, 426);
+            this.statusStripMessage.Location = new System.Drawing.Point(0, 428);
             this.statusStripMessage.Name = "statusStripMessage";
             this.statusStripMessage.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStripMessage.Size = new System.Drawing.Size(753, 24);
+            this.statusStripMessage.Size = new System.Drawing.Size(753, 22);
             this.statusStripMessage.TabIndex = 16;
             this.statusStripMessage.Text = "statusStrip1";
             // 
@@ -292,6 +291,7 @@
             this.Text = "Wiki Application";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WikiApplication_FormClosing);
             this.Load += new System.EventHandler(this.WikiApplication_Load);
+            this.Click += new System.EventHandler(this.WikiApplication_Click);
             this.groupBoxRadioBtn.ResumeLayout(false);
             this.groupBoxRadioBtn.PerformLayout();
             this.statusStripMessage.ResumeLayout(false);

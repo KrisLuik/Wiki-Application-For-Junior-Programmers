@@ -50,7 +50,7 @@ namespace Wiki_Application_For_Junior_Programmers
             }
             else
             {
-                toolStripStatusLabel.Text = "Error! Fill all fields.";
+                toolStripStatusLabel.Text = "Error! Ensure name, category, structure, and definiton fields are filled.";
             }
         }
         #endregion
@@ -61,24 +61,31 @@ namespace Wiki_Application_For_Junior_Programmers
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             ClearStatusMessage();
-            int currentItem = listViewItems.SelectedIndices[0];
-            if (currentItem >= 0)
+            try
             {
-                DialogResult delRecord = MessageBox.Show("Do you wish to delete this definition?",
-                 "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                int currentItem = listViewItems.SelectedIndices[0];
+                if (currentItem >= 0)
+                {
+                    DialogResult delRecord = MessageBox.Show("Do you wish to delete this definition?",
+                     "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (delRecord == DialogResult.Yes)
-                {
-                    wiki.RemoveAt(currentItem);
-                    wiki.Sort();
-                    ClearAllTextBoxes();
-                    Display();
-                    toolStripStatusLabel.Text = "Item deleted.";
+                    if (delRecord == DialogResult.Yes)
+                    {
+                        wiki.RemoveAt(currentItem);
+                        wiki.Sort();
+                        ClearAllTextBoxes();
+                        Display();
+                        toolStripStatusLabel.Text = "Item deleted.";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Item NOT Deleted", "Delete Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Item NOT Deleted", "Delete Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                toolStripStatusLabel.Text = "Error: Not a valid action.";
             }
         }
         #endregion
@@ -91,7 +98,6 @@ namespace Wiki_Application_For_Junior_Programmers
             try
             {
                 ClearStatusMessage();
-                //ClearListView();
                 int currentItem = listViewItems.SelectedIndices[0];
                 if (currentItem >= 0)
                 {
@@ -106,7 +112,7 @@ namespace Wiki_Application_For_Junior_Programmers
                         wiki.Sort();
                         Display();
                         ClearAllTextBoxes();
-                        toolStripStatusLabel.Text = "Item edited.";
+                        toolStripStatusLabel.Text = "Selected item updated.";
                     }
                     else
                     {
@@ -117,7 +123,7 @@ namespace Wiki_Application_For_Junior_Programmers
             }
             catch (ArgumentOutOfRangeException)
             {
-                toolStripStatusLabel.Text = "Please select an item from the list.";
+                toolStripStatusLabel.Text = "Error: Please select an item from the list.";
             }
         }
         #endregion
@@ -128,31 +134,38 @@ namespace Wiki_Application_For_Junior_Programmers
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             ClearStatusMessage();
-            wiki.Sort();
-            Information info = new Information();
-            info.SetName(textboxSearch.Text);
-            int result = wiki.BinarySearch(info);
-            //  trace.listeners(new textwritertracelistener(console.out))
-            if (result >= 0)
+            try
             {
-                listViewItems.SelectedItems.Clear();
-                listViewItems.Items[result].Selected = true;
-                listViewItems.Focus();
-                textboxName.Text = wiki[result].GetName();
-                comboBoxCategory.Text = wiki[result].GetCategory();
-                HighlightRadioButton(result);
-                textboxDefinition.Text = wiki[result].GetDefinition();
-                MessageBox.Show("Found.");
-                toolStripStatusLabel.Text = "Found at index " + result;
+                wiki.Sort();
+                Information info = new Information();
+                info.SetName(textboxSearch.Text);
+                int result = wiki.BinarySearch(info);
+                //  trace.listeners(new textwritertracelistener(console.out))
+                if (result >= 0)
+                {
+                    listViewItems.SelectedItems.Clear();
+                    listViewItems.Items[result].Selected = true;
+                    listViewItems.Focus();
+                    textboxName.Text = wiki[result].GetName();
+                    comboBoxCategory.Text = wiki[result].GetCategory();
+                    HighlightRadioButton(result);
+                    textboxDefinition.Text = wiki[result].GetDefinition();
+                    toolStripStatusLabel.Text = "Found at index: " + result + ".";
+                }
+                else
+                {
+                    toolStripStatusLabel.Text = "Not found.";
+                    textboxSearch.Clear();
+                    textboxSearch.Focus();
+                    ClearAllTextBoxes();
+                }
             }
-            else
+            catch (ArgumentOutOfRangeException)
             {
-                toolStripStatusLabel.Text = "Not found.";
-                ClearAllTextBoxes();
+                toolStripStatusLabel.Text = "";
+                textboxSearch.Focus();
             }
-            Display();
-            // clear search textbox
-        }
+        } 
         #endregion
         // 6.6 Create two methods to highlight and return the values from the Radio button GroupBox.
         // The first method must return a string value from the selected radio button (Linear or Non-Linear).
@@ -230,7 +243,7 @@ namespace Wiki_Application_For_Junior_Programmers
                 toolStripStatusLabel.Text = "File loaded.";
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             Save();
             toolStripStatusLabel.Text = "Data items saved.";
@@ -321,7 +334,6 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Double-Click Delete Method
         private void TextboxName_DoubleClick(object sender, EventArgs e)
         {
-
             ClearStatusMessage();
             if (!string.IsNullOrWhiteSpace(textboxName.Text))
             {
@@ -378,6 +390,15 @@ namespace Wiki_Application_For_Junior_Programmers
         {
             toolStripStatusLabel.Text = "";
         }
+
+        private void WikiApplication_Click(object sender, EventArgs e)
+        {
+            ClearStatusMessage();
+            textboxName.Focus();
+        }
+
+      // Needs input handling. 
+      
     }
 }
 

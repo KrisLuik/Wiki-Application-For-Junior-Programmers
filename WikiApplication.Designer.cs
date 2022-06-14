@@ -49,8 +49,8 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.statusStripMessage = new System.Windows.Forms.StatusStrip();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxRadioBtn.SuspendLayout();
             this.statusStripMessage.SuspendLayout();
             this.SuspendLayout();
@@ -61,29 +61,29 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 28);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(195, 16);
+            this.btnEdit.Location = new System.Drawing.Point(197, 16);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 28);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Size = new System.Drawing.Size(80, 28);
+            this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(109, 16);
+            this.btnDelete.Location = new System.Drawing.Point(106, 16);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 28);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Size = new System.Drawing.Size(80, 28);
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -94,7 +94,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(97, 30);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
@@ -105,8 +105,9 @@
             this.textboxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxName.Name = "textboxName";
             this.textboxName.Size = new System.Drawing.Size(192, 22);
-            this.textboxName.TabIndex = 4;
+            this.textboxName.TabIndex = 0;
             this.textboxName.DoubleClick += new System.EventHandler(this.TextboxName_DoubleClick);
+            this.textboxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxName_KeyPress);
             // 
             // textboxSearch
             // 
@@ -114,7 +115,7 @@
             this.textboxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textboxSearch.Name = "textboxSearch";
             this.textboxSearch.Size = new System.Drawing.Size(209, 22);
-            this.textboxSearch.TabIndex = 6;
+            this.textboxSearch.TabIndex = 11;
             // 
             // label1
             // 
@@ -143,7 +144,7 @@
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(192, 24);
             this.comboBoxCategory.Sorted = true;
-            this.comboBoxCategory.TabIndex = 9;
+            this.comboBoxCategory.TabIndex = 1;
             // 
             // groupBoxRadioBtn
             // 
@@ -154,7 +155,7 @@
             this.groupBoxRadioBtn.Name = "groupBoxRadioBtn";
             this.groupBoxRadioBtn.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxRadioBtn.Size = new System.Drawing.Size(259, 69);
-            this.groupBoxRadioBtn.TabIndex = 10;
+            this.groupBoxRadioBtn.TabIndex = 2;
             this.groupBoxRadioBtn.TabStop = false;
             this.groupBoxRadioBtn.Text = "Structure";
             // 
@@ -165,7 +166,7 @@
             this.radioBtnNonLinear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioBtnNonLinear.Name = "radioBtnNonLinear";
             this.radioBtnNonLinear.Size = new System.Drawing.Size(100, 21);
-            this.radioBtnNonLinear.TabIndex = 1;
+            this.radioBtnNonLinear.TabIndex = 4;
             this.radioBtnNonLinear.TabStop = true;
             this.radioBtnNonLinear.Text = "Non-Linear";
             this.radioBtnNonLinear.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@
             this.radioBtnLinear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioBtnLinear.Name = "radioBtnLinear";
             this.radioBtnLinear.Size = new System.Drawing.Size(69, 21);
-            this.radioBtnLinear.TabIndex = 0;
+            this.radioBtnLinear.TabIndex = 3;
             this.radioBtnLinear.TabStop = true;
             this.radioBtnLinear.Text = "Linear";
             this.radioBtnLinear.UseVisualStyleBackColor = true;
@@ -198,7 +199,7 @@
             this.textboxDefinition.Multiline = true;
             this.textboxDefinition.Name = "textboxDefinition";
             this.textboxDefinition.Size = new System.Drawing.Size(257, 160);
-            this.textboxDefinition.TabIndex = 12;
+            this.textboxDefinition.TabIndex = 5;
             // 
             // listViewItems
             // 
@@ -232,7 +233,7 @@
             this.btnOpen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(121, 34);
-            this.btnOpen.TabIndex = 14;
+            this.btnOpen.TabIndex = 9;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
@@ -243,7 +244,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 34);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -263,7 +264,7 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 18);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
             // WikiApplication
             // 

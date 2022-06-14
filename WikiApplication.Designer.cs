@@ -63,6 +63,7 @@
             this.btnAdd.Size = new System.Drawing.Size(80, 28);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ADD";
+            this.toolTip1.SetToolTip(this.btnAdd, "Add data item");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -74,6 +75,7 @@
             this.btnEdit.Size = new System.Drawing.Size(80, 28);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "EDIT";
+            this.toolTip1.SetToolTip(this.btnEdit, "Edit data item");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
@@ -85,6 +87,7 @@
             this.btnDelete.Size = new System.Drawing.Size(80, 28);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "DELETE";
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete data item");
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
@@ -96,6 +99,7 @@
             this.btnSearch.Size = new System.Drawing.Size(97, 30);
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
+            this.toolTip1.SetToolTip(this.btnSearch, "Click search button to find an item");
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
@@ -106,6 +110,7 @@
             this.textboxName.Name = "textboxName";
             this.textboxName.Size = new System.Drawing.Size(192, 22);
             this.textboxName.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textboxName, "Enter data structure name");
             this.textboxName.DoubleClick += new System.EventHandler(this.TextboxName_DoubleClick);
             this.textboxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxName_KeyPress);
             // 
@@ -116,6 +121,7 @@
             this.textboxSearch.Name = "textboxSearch";
             this.textboxSearch.Size = new System.Drawing.Size(209, 22);
             this.textboxSearch.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.textboxSearch, "Search for data item");
             // 
             // label1
             // 
@@ -145,6 +151,7 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(192, 24);
             this.comboBoxCategory.Sorted = true;
             this.comboBoxCategory.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.comboBoxCategory, "Select data structure category");
             // 
             // groupBoxRadioBtn
             // 
@@ -158,6 +165,7 @@
             this.groupBoxRadioBtn.TabIndex = 2;
             this.groupBoxRadioBtn.TabStop = false;
             this.groupBoxRadioBtn.Text = "Structure";
+            this.toolTip1.SetToolTip(this.groupBoxRadioBtn, "Select data structure type");
             // 
             // radioBtnNonLinear
             // 
@@ -200,6 +208,7 @@
             this.textboxDefinition.Name = "textboxDefinition";
             this.textboxDefinition.Size = new System.Drawing.Size(257, 160);
             this.textboxDefinition.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.textboxDefinition, "Insert data structure definition");
             // 
             // listViewItems
             // 
@@ -213,6 +222,7 @@
             this.listViewItems.Name = "listViewItems";
             this.listViewItems.Size = new System.Drawing.Size(379, 350);
             this.listViewItems.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.listViewItems, "Data structures are displayed here");
             this.listViewItems.UseCompatibleStateImageBehavior = false;
             this.listViewItems.View = System.Windows.Forms.View.Details;
             this.listViewItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewBox_MouseClick);
@@ -235,6 +245,7 @@
             this.btnOpen.Size = new System.Drawing.Size(121, 34);
             this.btnOpen.TabIndex = 9;
             this.btnOpen.Text = "Open";
+            this.toolTip1.SetToolTip(this.btnOpen, "Load data");
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
@@ -246,6 +257,7 @@
             this.btnSave.Size = new System.Drawing.Size(121, 34);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
+            this.toolTip1.SetToolTip(this.btnSave, "Save data");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
@@ -260,6 +272,7 @@
             this.statusStripMessage.Size = new System.Drawing.Size(753, 22);
             this.statusStripMessage.TabIndex = 16;
             this.statusStripMessage.Text = "statusStrip1";
+            this.toolTip1.SetToolTip(this.statusStripMessage, "Feedback messaging");
             // 
             // toolStripStatusLabel
             // 

@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics.Tracing;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+
 // Name: Kristiin Tribbeck
 // ID: 30045325
 // Program demonstrates how a collection of information can be stored using a Windows Form Application. 
@@ -26,7 +30,6 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Properties
         List<Information> wiki = new List<Information>();
         static string[] categoryArray = new string[] { "Array", "Abstract", "Graph", "Hash", "List", "Tree" };
-        //string defaultFileName = "definitions.bin";
         #endregion
         // 6.3 Create a button method to ADD a new item to the list. Use a TextBox for the Name input,
         // ComboBox for the Category, Radio group for the Structure and Multiline TextBox for the Definition.
@@ -34,11 +37,12 @@ namespace Wiki_Application_For_Junior_Programmers
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             ClearStatusMessage();
-            if (!string.IsNullOrWhiteSpace(textboxName.Text) && (ValidName(textboxName.Text)
-                && !string.IsNullOrWhiteSpace(textboxDefinition.Text)))
+            if (!string.IsNullOrWhiteSpace(textboxName.Text) 
+                && (ValidName(textboxName.Text) &&
+                !string.IsNullOrWhiteSpace(textboxDefinition.Text)))
             {
                 Information newInfo = new Information();
-                newInfo.SetName(textboxName.Text);
+                newInfo.SetName(textboxName.Text.Trim().Substring(0,1).ToUpper() + textboxName.Text.Substring(1));
                 newInfo.SetCategory(comboBoxCategory.Text);
                 newInfo.SetStructure(RadioButtonType());
                 newInfo.SetDefinition(textboxDefinition.Text);
@@ -47,6 +51,9 @@ namespace Wiki_Application_For_Junior_Programmers
                 Display();
                 ClearAllTextBoxes();
                 toolStripStatusLabel.Text = "Definition added.";
+            }else if (!ValidName(textboxName.Text))
+            {
+                toolStripStatusLabel.Text = "Error! Cannot add duplicates.";
             }
             else
             {
@@ -60,10 +67,14 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Delete Button
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            // Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
+            // Trace.AutoFlush = true;
+            // Trace.WriteLine("");
             ClearStatusMessage();
             try
             {
                 int currentItem = listViewItems.SelectedIndices[0];
+                // Trace.WriteLine("Current item index: " + currentItem);
                 if (currentItem >= 0)
                 {
                     DialogResult delRecord = MessageBox.Show("Do you wish to delete this definition?",
@@ -76,15 +87,18 @@ namespace Wiki_Application_For_Junior_Programmers
                         ClearAllTextBoxes();
                         Display();
                         toolStripStatusLabel.Text = "Item deleted.";
+                        // Trace.WriteLine("Selected item deleted.");
                     }
                     else
                     {
                         MessageBox.Show("Item NOT Deleted", "Delete Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Trace.WriteLine("Item NOT deleted.");
                     }
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
+                // Trace.WriteLine("Error! Not a valid action!");
                 toolStripStatusLabel.Text = "Error: Not a valid action.";
             }
         }
@@ -94,12 +108,14 @@ namespace Wiki_Application_For_Junior_Programmers
         // Display an updated version of the sorted list at the end of this process.
         #region Edit Button
         private void BtnEdit_Click(object sender, EventArgs e)
-        { 
+        {
             try
             {
+               // Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
                 ClearStatusMessage();
                 int currentItem = listViewItems.SelectedIndices[0];
                 if (currentItem >= 0)
+                    // Trace.WriteLine("Item index: " + currentItem);
                 {
                     var result = MessageBox.Show("Proceed with update?", "Edit Record",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -113,17 +129,20 @@ namespace Wiki_Application_For_Junior_Programmers
                         Display();
                         ClearAllTextBoxes();
                         toolStripStatusLabel.Text = "Selected item updated.";
+                       // Trace.WriteLine("Item updated.");
                     }
                     else
                     {
                         MessageBox.Show("Data Item NOT changed", "Edit Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         toolStripStatusLabel.Text = "Data item not changed.";
+                       // Trace.WriteLine("Item NOT updated.");
                     }
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
                 toolStripStatusLabel.Text = "Error: Please select an item from the list.";
+                // Trace.WriteLine("Error! Please select an item from the list.");
             }
         }
         #endregion
@@ -133,14 +152,15 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Search Button
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            // Trace.WriteLine("");
             ClearStatusMessage();
             try
             {
                 wiki.Sort();
                 Information info = new Information();
-                info.SetName(textboxSearch.Text);
+                info.SetName(textboxSearch.Text.Trim().Substring(0, 1).ToUpper() + textboxSearch.Text.Substring(1));
                 int result = wiki.BinarySearch(info);
-                //  trace.listeners(new textwritertracelistener(console.out))
+                // Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
                 if (result >= 0)
                 {
                     listViewItems.SelectedItems.Clear();
@@ -151,6 +171,7 @@ namespace Wiki_Application_For_Junior_Programmers
                     HighlightRadioButton(result);
                     textboxDefinition.Text = wiki[result].GetDefinition();
                     toolStripStatusLabel.Text = "Found at index: " + result + ".";
+                    // Trace.WriteLine("Item to search: " + textboxSearch.Text + "." + " Found at index: " + result);
                 }
                 else
                 {
@@ -158,14 +179,16 @@ namespace Wiki_Application_For_Junior_Programmers
                     textboxSearch.Clear();
                     textboxSearch.Focus();
                     ClearAllTextBoxes();
+                    // Trace.WriteLine("Searched item is NOT found.");
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
                 toolStripStatusLabel.Text = "";
                 textboxSearch.Focus();
+                // Trace.WriteLine("Error!");
             }
-        } 
+        }
         #endregion
         // 6.6 Create two methods to highlight and return the values from the Radio button GroupBox.
         // The first method must return a string value from the selected radio button (Linear or Non-Linear).
@@ -174,22 +197,18 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Radio Button
         private string RadioButtonType()
         {
-            string value = "";
             if (radioBtnLinear.Checked)
             {
-                value = radioBtnLinear.Text;
                 return "Linear";
             }
             else
             {
-                radioBtnNonLinear.Checked = true;
-                value = radioBtnNonLinear.Text;
                 return "Non-Linear";
             }
         }
         private void HighlightRadioButton(int button)
         {
-            if (button == 0)
+            if (wiki[button].GetStructure() == "Linear")
             {
                 radioBtnLinear.Checked = true;
             }
@@ -373,32 +392,38 @@ namespace Wiki_Application_For_Junior_Programmers
         #region Check Duplicates
         private bool ValidName(string checkThisName)
         {
-            // Trace.Listeners.Add(myTraceListener);
+           // Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
             if (wiki.Exists(dup => dup.GetName() == checkThisName))
             {
-                // Trace.WriteLine("Valid Name == false");
+               // Trace.WriteLine("Valid Name == false");
                 return false;
             }
             else
             {
-                // Trace.WriteLine("Valid Name == true");
+                //Trace.WriteLine("Valid Name == true");
                 return true;
             }
         }
         #endregion
+        #region Utility methods
         private void ClearStatusMessage()
         {
             toolStripStatusLabel.Text = "";
         }
-
         private void WikiApplication_Click(object sender, EventArgs e)
         {
             ClearStatusMessage();
             textboxName.Focus();
         }
-
-      // Needs input handling. 
-      
+        private void textboxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z\b\s]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }
 

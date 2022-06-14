@@ -357,6 +357,7 @@ namespace Wiki_Application_For_Junior_Programmers
             if (!string.IsNullOrWhiteSpace(textboxName.Text))
             {
                 ClearAllTextBoxes();
+                toolStripStatusLabel.Text = "Textfields cleared.";
             }
             else
             {
